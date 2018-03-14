@@ -1,2 +1,2 @@
-# kseveru.github.io
-Мое портфолио
+# portfolio
+Выполненные работы https://kseveru.github.io/portfolio/
