@@ -1,0 +1,4 @@
+*.log
+nod_modules/
+npm-debug.*
+Thumbs.db
