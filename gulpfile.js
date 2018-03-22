@@ -10,7 +10,7 @@ var imagemin = require("gulp-imagemin");
 var ghPages = require('gulp-gh-pages');
 
 gulp.task("clean", function () {
-  return del("build");
+  return del(["*.html", "css", "img", "fonts"]);
 });
 
 gulp.task("copy", function () {
@@ -18,7 +18,7 @@ gulp.task("copy", function () {
     "assets/*.html",
     "assets/fonts/*.{woff,woff2}"
     ], {base: "./assets/"})
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("./"));
 });
 
 gulp.task("style", function () {
@@ -26,7 +26,7 @@ gulp.task("style", function () {
     .pipe(postcss([ autoprefixer() ]))
     .pipe(minify())
     /*.pipe(rename("style.min.css"))*/
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("./css"))
 });
 
 gulp.task("images", function () {
@@ -36,7 +36,7 @@ gulp.task("images", function () {
       imagemin.jpegtran({progressive: true}),
       imagemin.svgo()
       ]))
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("./img"));
 });
 
 gulp.task("default", gulp.series(
