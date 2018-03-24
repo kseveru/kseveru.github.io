@@ -49,15 +49,6 @@ body {
   background-size: 100vw auto;
 }
 
-a {
-  color: #333333;
-}
-
-a:hover,
-a:focus {
-  color: hsla(1, 100%, 66%, 1);
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -119,7 +110,7 @@ img {
 .works {
   display: grid;
   grid-template-columns: minmax(auto, 390px);
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
   justify-content: center;
   margin: 0;
   padding: 0;
@@ -128,11 +119,13 @@ img {
 }
 
 .works__item {
-  padding: 1rem;
-
   background-color: #f5f5f5;
-  border: 1px solid #fafafa;
+  border: 1px solid #fbfbfb;
   box-shadow: 0 0 0 1px #ededed;
+}
+
+.work {
+  padding: 1rem;
 }
 
 .work__title {
@@ -141,11 +134,35 @@ img {
   font: 400 1rem/1 "PT Sans Narrow", "Calibri", sans-serif;
 }
 
+.work__title-link {
+  color: #333333;
+}
+
+.work__title-link:hover,
+.work__title-link:focus {
+  color: hsla(1, 100%, 66%, 1);
+}
+
+.work__title-link:visited {
+  color: rgba(51, 51, 51, 0.55);
+}
+
 .work__layout {
+  position: relative;
+
   display: block;
   margin: 1rem 0 0;
 
-  border: 1px solid #fafafa;
+  border: 1px solid #fbfbfb;
+}
+
+.work__layout:after {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: hsla(94, 62%, 62%, 0.75);
 }
 
 .work__img {
@@ -180,11 +197,20 @@ img {
   padding: 1.5rem 0;
 }
 
+.about-link {
+  color: #333333;
+}
+
+.about-link:hover,
+.about-link:focus {
+  color: hsla(1, 100%, 66%, 1);
+}
+
 
 /* === 2 COLUMNS === */
 /* ================= */
 
-@media (min-width: 565px) {
+@media (min-width: 575px) {
 
   /* GLOBAL
   ================================================== */
@@ -208,7 +234,7 @@ img {
   .work__description {
     align-items: flex-end;
 
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
   .work__page {
@@ -233,7 +259,7 @@ img {
 /* === 3 COLUMNS === */
 /* ================= */
 
-@media (min-width: 840px) {
+@media (min-width: 865px) {
 
   /* GLOBAL
   ================================================== */
@@ -260,7 +286,7 @@ img {
 /* === 4 COLUMNS === */
 /* ================= */
 
-@media (min-width: 1110px) {
+@media (min-width: 1170px) {
 
   /* GLOBAL
   ================================================== */
