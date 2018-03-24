@@ -149,6 +149,7 @@ img {
 
 .work__layout {
   position: relative;
+  overflow: hidden;
 
   display: block;
   margin: 1rem 0 0;
@@ -156,13 +157,31 @@ img {
   border: 1px solid #fbfbfb;
 }
 
-.work__layout:after {
+.work__layout::after {
+  content: "Открыть макет";
+
   position: absolute;
+  left: 0;
+  top: calc(-100% + 2px);
 
-  width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  margin: 1px;
 
-  background-color: hsla(94, 62%, 62%, 0.75);
+  font-size: 1rem;
+  color: #ffffff;
+
+  transition: all 1s;
+}
+
+.work__layout:hover::after {
+  top: 0;
+
+  background-color: hsla(231, 77%, 68%, 0.9);
+  border: 1px solid #ededed;
 }
 
 .work__img {
