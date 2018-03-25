@@ -7,7 +7,7 @@ var concat = require('gulp-concat');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssmin = require('gulp-csso');
-var rename = require('gulp-rename');
+//var rename = require('gulp-rename');
 var imagemin = require('gulp-imagemin');
 var browserSync = require("browser-sync").create();
 
@@ -41,21 +41,26 @@ gulp.task('style', function () {
     .pipe(concat('style.css'))
     .pipe(postcss([ autoprefixer() ]))
     .pipe(cssmin())
-    .pipe(rename('style.min.css'))
+    //.pipe(rename('style.min.css'))
     .pipe(gulp.dest('./css'))
 });
 
 gulp.task('watch', function() {
-  gulp.watch('assets/**/*.css', gulp.series('style'));
+  gulp.watch('assets/css/*.css', gulp.series('style'));
   gulp.watch('assets/*.html', gulp.series('html'));
   gulp.watch('assets/img/**/*.{png,jpg,svg}', gulp.series('image'));
-  gulp.watch('assets/**/*.*', gulp.series('copy'));
+  //gulp.watch('assets/**/*.*', gulp.series('copy'));
 });
 
 gulp.task('serve', function() {
   browserSync.init({
     server: '.'
   });
+
+  gulp.watch('assets/css/*.css', gulp.series('style'));
+  gulp.watch('assets/*.html', gulp.series('html'));
+  gulp.watch('assets/img/**/*.{png,jpg,svg}', gulp.series('image'));
+
   browserSync.watch('./**/*.*').on('change', browserSync.reload);
 });
 
@@ -64,7 +69,5 @@ gulp.task('build',
   gulp.parallel('copy', 'image', 'html', 'style'))
 );
 
-gulp.task('default',
-  gulp.series('build',
-  gulp.parallel('watch', 'serve'))
-);
+//gulp.task('dev', gulp.parallel('watch', 'serve')
+//);

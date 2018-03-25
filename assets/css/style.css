@@ -44,8 +44,8 @@ body {
   color: #333333;
 
   background-color: #fdfdfd;
-  background-image: linear-gradient(25deg, transparent 0%, transparent 90%, hsla(94, 62%, 62%, 0.75) 90%, hsla(94, 62%, 62%, 0.75) 100%),
-                    linear-gradient(-155deg, transparent 0%, transparent 90%, hsla(94, 62%, 62%, 0.75) 90%, hsla(94, 62%, 62%, 0.75) 100%);
+  background-image: linear-gradient(25deg, transparent 0%, transparent 94%, hsla(94, 62%, 62%, 0.75) 94%, hsla(94, 62%, 62%, 0.75) 100%),
+                    linear-gradient(-155deg, transparent 0%, transparent 94%, hsla(94, 62%, 62%, 0.75) 94%, hsla(94, 62%, 62%, 0.75) 100%);
   background-size: 100vw auto;
 }
 
@@ -70,21 +70,10 @@ img {
   clip: rect(0, 0, 0, 0);
 }
 
-.btn-reset {
-  padding: 0;
-
-  font: inherit;
-  text-transform: inherit;
-  color: inherit;
-
-  background-color: transparent;
-  border: 0;
-
-  cursor: pointer;
-}
-
-.btn-reset:disabled {
-  cursor: default;
+svg path {
+  fill:inherit;
+  stroke:inherit;
+  stroke-width:inherit;
 }
 
 
@@ -134,16 +123,16 @@ img {
   font: 400 1rem/1 "PT Sans Narrow", "Calibri", sans-serif;
 }
 
-.work__title-link {
+.work__link {
   color: #333333;
 }
 
-.work__title-link:hover,
-.work__title-link:focus {
+.work__link:hover,
+.work__link:focus {
   color: hsla(1, 100%, 66%, 1);
 }
 
-.work__title-link:visited {
+.work__link:visited {
   color: rgba(51, 51, 51, 0.55);
 }
 
@@ -153,6 +142,8 @@ img {
 
   display: block;
   margin: 1rem 0 0;
+
+  text-decoration: none;
 
   border: 1px solid #fbfbfb;
 }
@@ -177,7 +168,8 @@ img {
   transition: all 1s;
 }
 
-.work__layout:hover::after {
+.work__layout:hover::after,
+.work__layout:focus::after {
   top: 0;
 
   background-color: hsla(231, 77%, 68%, 0.9);
@@ -201,8 +193,17 @@ img {
   margin: 0;
 }
 
-.work__link-img {
+.work__github {
+  text-decoration: none;
+}
+
+.work__github-img {
   display: block;
+}
+
+.work__github:hover .work__github-img,
+.work__github:focus .work__github-img {
+  fill: hsla(1, 100%, 66%, 1);
 }
 
 
@@ -338,21 +339,18 @@ img {
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 
-  .container {
-    position: relative;
-
-    padding-top: 2.5rem;
+  .works {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  .container::before {
-    content: "Пожалуйста, смените браузер.";
+  .works__item {
+    min-width: 240px;
+    margin: 0 1.5rem 1.5rem 0;
+  }
 
-    position: absolute;
-    top: 1rem;
-
-    font-size: 1.5rem;
-    color: hsla(1, 100%, 66%, 1);
-    text-align: center;
+  .page-footer {
+    padding: 0 0 1.5rem;
   }
 
 }
