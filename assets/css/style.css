@@ -46,7 +46,6 @@ body {
   background-color: #fdfdfd;
   background-image: linear-gradient(25deg, transparent 0%, transparent 94%, hsla(94, 62%, 62%, 0.75) 94%, hsla(94, 62%, 62%, 0.75) 100%),
                     linear-gradient(-155deg, transparent 0%, transparent 94%, hsla(94, 62%, 62%, 0.75) 94%, hsla(94, 62%, 62%, 0.75) 100%);
-  background-size: 100vw auto;
 }
 
 img {
@@ -70,7 +69,7 @@ img {
   clip: rect(0, 0, 0, 0);
 }
 
-svg path {
+svg {
   fill:inherit;
   stroke:inherit;
   stroke-width:inherit;
@@ -132,10 +131,6 @@ svg path {
   color: hsla(1, 100%, 66%, 1);
 }
 
-.work__link:visited {
-  color: rgba(51, 51, 51, 0.55);
-}
-
 .work__layout {
   position: relative;
   overflow: hidden;
@@ -153,7 +148,7 @@ svg path {
 
   position: absolute;
   left: 0;
-  top: calc(-100% + 2px);
+  top: 0;
 
   display: flex;
   justify-content: center;
@@ -162,15 +157,15 @@ svg path {
   height: calc(100% - 2px);
   margin: 1px;
 
-  font-size: 1rem;
   color: #ffffff;
 
+  transform: translateY(calc(-100% + 2px));
   transition: all 1s;
 }
 
 .work__layout:hover::after,
 .work__layout:focus::after {
-  top: 0;
+  transform: translateY(0);
 
   background-color: hsla(231, 77%, 68%, 0.9);
   border: 1px solid #ededed;
