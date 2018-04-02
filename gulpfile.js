@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var del = require('del');
 var htmlmin = require('gulp-htmlmin');
-var concat = require('gulp-concat');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssmin = require('gulp-csso');
@@ -37,7 +36,6 @@ gulp.task('html', function() {
 
 gulp.task('style', function () {
   return gulp.src('assets/css/*.css')
-    .pipe(concat('style.css'))
     .pipe(postcss([ autoprefixer() ]))
     .pipe(cssmin())
     .pipe(gulp.dest('./css'))
