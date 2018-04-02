@@ -43,7 +43,7 @@ gulp.task('style', function () {
     .pipe(gulp.dest('./css'))
 });
 
-gulp.task('build',
+gulp.task('default',
   gulp.series('clean',
   gulp.parallel('copy', 'image', 'html', 'style'))
 );
