@@ -91,8 +91,14 @@ svg {
 .page-main__title {
   margin: 1.5rem 0;
 
-  font: 400 1.5rem/1 "PT Sans Narrow", "Calibri", sans-serif;
+  font: 400 1.5rem/1.5 "PT Sans Narrow", "Calibri", sans-serif;
   text-align: center;
+}
+
+.page-main__title-desc {
+  display: block;
+
+  opacity: 0.2;
 }
 
 .works {
