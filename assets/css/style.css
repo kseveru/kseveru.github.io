@@ -42,6 +42,8 @@ body {
 
   font: normal 400 0.75rem/1 "PT Sans", "Calibri", sans-serif;
   color: #333333;
+  
+  background-color:#fdfdfd;
 }
 
 img {
