@@ -1,2 +1,4 @@
 # Portfolio
-Выполненные работы (веб-вёрстка) https://kseveru.github.io
+Веб-вёрстка, выполненные работы
+
+https://kseveru.github.io
