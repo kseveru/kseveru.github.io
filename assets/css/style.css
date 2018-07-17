@@ -251,8 +251,6 @@ svg {
   }
 
   .work__description {
-    align-items: flex-end;
-
     line-height: 1.3;
   }
 
