@@ -48,7 +48,7 @@ gulp.task('style', function () {
     .pipe(gulp.dest('./css'))
 });
 
-gulp.task('default',
+gulp.task('build',
   gulp.series('clean',
   gulp.parallel('copy', 'svgmin', 'html', 'style'))
 );
@@ -63,3 +63,9 @@ gulp.task('dev', function() {
   gulp.watch('assets/css/*.css', gulp.series('style'));
   browserSync.watch('./**/*.*').on('change', browserSync.reload);
 });
+
+gulp.task('default',
+  gulp.series('clean',
+  gulp.parallel('copy', 'svgmin', 'html', 'style'),
+  'dev')
+);

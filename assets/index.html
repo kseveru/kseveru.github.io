@@ -14,9 +14,6 @@
 </head>
 <body>
 
-  <div class="container">
-
-
 <!-- ===== SVG SPRITE ===================== -->
 
   <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
@@ -26,8 +23,9 @@
     </symbol>
   </svg>
 
-
 <!-- ===== CONTENT ======================== -->
+
+  <div class="container">
 
     <main class="page-main">
       <h1 class="page-main__title">kseveru | Портфолио
@@ -35,6 +33,21 @@
       </h1>
 
       <ul class="works">
+        <li class="works__item work">
+          <h2 class="work__title">
+            <a class="work__link" href="https://kseveru.github.io/traffic-school/">Traffic school</a>
+          </h2>
+          <a class="work__layout" href="img/preview-traffic-school-desktop.jpg">
+            <img class="work__img" src="img/preview-traffic-school-desktop--small.jpg" width="350" height="350" srcset="img/preview-traffic-school-desktop--small-2x.jpg 2x" alt="Макет traffic-school">
+          </a>
+          <div class="work__description">
+            <p class="work__layout-type">Адаптивная вёрстка <span class="work__page">(landing page)</span></p>
+            <a class="work__github" href="https://github.com/kseveru/traffic-school" title="Репозиторий на Гитхабе">
+              <svg class="work__github-img" width="24" height="24"><use xlink:href="#icon-github"></use></svg>
+            </a>
+          </div>
+        </li>
+
         <li class="works__item work">
           <h2 class="work__title">
             <a class="work__link" href="https://kseveru.github.io/DSGN/">DSGN</a>
@@ -172,7 +185,6 @@
       </ul>
 
     </main>
-
 
 <!-- ===== FOOTER ========================= -->
 
